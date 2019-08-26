@@ -19,10 +19,12 @@ class Home extends Component {
     const { seaCreatures } = this.state;
     return (
       <div>
+          <div className="container">
+              <h1>{this.state.counter}</h1>
+          </div>
         {seaCreatures.map(creature => (
           <div className="row">
             <div className="col-12">
-            {this.state.counter}
               <Card
                 id={creature.id}
                 key={creature.id}
