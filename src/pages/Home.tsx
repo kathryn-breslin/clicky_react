@@ -5,7 +5,8 @@ import seaCreatures from "../seaCreatures.json";
 class Home extends Component {
   state = {
     seaCreatures, 
-    counter: 0
+    counter: 0, 
+    clicked: []
   };
 
   shuffle = (id: any) => {
@@ -13,8 +14,9 @@ class Home extends Component {
     seaCreatures.sort(() => Math.random() - 0.5);
 
     this.setState({ counter: counter + 1})
-    console.log("click");
   }
+
+
   render() {
     const { seaCreatures } = this.state;
     return (
