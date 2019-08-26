@@ -1,10 +1,9 @@
 import React from "react";
+import Home from "./pages/Home"
 import './App.css';
 const App: React.FC = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Home/>
   );
 }
 

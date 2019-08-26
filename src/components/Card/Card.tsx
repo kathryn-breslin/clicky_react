@@ -1,10 +1,10 @@
 import React from "react";
 
-function Card ({/* props */}) {
+function Card (props: { name: string | undefined; id: number; image: string | undefined; }) {
     return (
         <div className="card">
             <div className="img-container">
-                {/* Pass and add props */}
+                <img alt={props.name} src={props.image}></img>
             </div>
         </div>
     )
