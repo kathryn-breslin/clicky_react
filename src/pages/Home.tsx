@@ -11,6 +11,7 @@ interface ICreatures {
 interface IState {
   seaCreatures: ICreatures[];
   counter: number;
+  currentScore: number;
   clicked: string[];
 }
 
@@ -18,42 +19,43 @@ class Home extends Component {
   state: IState = {
     seaCreatures,
     counter: 0,
+    currentScore: 0,
     clicked: []
   };
 
+  //Shuffle cards
   shuffle = (id: any) => {
-    const { seaCreatures, counter } = this.state;
+    const { seaCreatures } = this.state;
     seaCreatures.sort(() => Math.random() - 0.5);
-
-    console.log("ID: " + id);
-
-    this.setState({ counter: counter + 1 });
+    // this.setState({ counter: counter + 1 });
+    this.handleClick(id);
   };
 
+  //Click counter
   handleClick = (id: any) => {
     const { clicked } = this.state;
+
     if (clicked.indexOf(id)) {
       this.setState({ clicked: clicked.concat(id) });
-    } else {
-      console.log("redo");
+      this.calculateScore();
+    }
+    else if (clicked.includes(id)) {
+        alert("You lose!")
     }
   };
 
-  //   scoring = () => {
-  //       const { counter, totalScore, id } = this.state;
-  //       const score = counter + 1;
+  calculateScore = () => {
+    const { counter, currentScore } = this.state;
+    const score = counter + 1;
 
-  //       this.setState({ totalScore: score });
-
-  //       if (score >= totalScore){
-  //         console.log(id)
-  //         this.setState({totalScore: score})
-  //       }
-  //       else if (score === 12) {
-  //           console.log("You win!")
-  //       }
-  //       this.shuffle(id);
-  //   }
+    if (score >= currentScore) {
+      this.setState({ currentScore: score });
+    }
+    else if (score === 12) {
+        this.setState({ currentScore: score})
+        console.log("You win!")
+    }
+  };
 
   render() {
     return (
