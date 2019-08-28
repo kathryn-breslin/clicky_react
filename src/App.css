@@ -1,0 +1,7 @@
+body {
+  background-image: url("../src/components/assets/images/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+}

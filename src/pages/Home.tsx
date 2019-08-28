@@ -73,7 +73,7 @@ class Home extends Component {
         />
         <div className="container-fluid">
           <div className="row">
-            <div className="container">
+            <div id="cardsDiv">
               {seaCreatures.map(creature => (
                 <Card
                   id={creature.id}

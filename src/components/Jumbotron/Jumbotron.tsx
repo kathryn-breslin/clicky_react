@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Jumbotron.css";
 interface IProps {
     counter: number;
     totalScore: number

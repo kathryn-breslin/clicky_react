@@ -1,10 +1,14 @@
-.container {
-    text-align: center;
+.container-fluid {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center 
 }
-#container{
-    text-align: center;
+#cardsDiv{
+    margin: 150px;
+    padding: 100px;
+    /* border: solid red 1px; */
 }
 
-.shuffle {
-    margin: auto;
+#cardsDiv .card{
+    margin: 5px;
 }
