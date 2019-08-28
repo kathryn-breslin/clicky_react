@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "../components";
+import { Card, Jumbotron } from "../components";
 import seaCreatures from "../seaCreatures.json";
 
 interface ICreatures {
@@ -49,7 +49,7 @@ class Home extends Component {
     let currentScore = counter + 1;
     this.setState({ counter: currentScore})
     console.log("Counter State: " + counter);
-    
+
     if (currentScore >= totalScore) {
       this.setState({ totalScore: currentScore });
     }
@@ -68,11 +68,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="container">
-          <h1>{this.state.counter}</h1>
-          <h1>{this.state.totalScore}</h1>
-
-        </div>
+        <Jumbotron
+            counter={this.state.counter}
+            totalScore={this.state.totalScore}
+        />
         {seaCreatures.map(creature => (
           <div className="row">
             <div className="col-12">
