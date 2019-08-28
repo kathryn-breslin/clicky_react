@@ -4,7 +4,9 @@
     justify-content: center 
 }
 #cardsDiv{
-    margin: 150px;
+    margin-left: 75px;
+    margin-right: 75px;
+
     padding: 100px;
     /* border: solid red 1px; */
 }

@@ -1,3 +1,11 @@
 .jumbotron {
     background: none;
+    font-family: 'Cabin Sketch', cursive;
+    color: white;
+    margin: 20px;
+}
+
+
+#displayContainer, #jumboElements{
+    float: left;
 }
