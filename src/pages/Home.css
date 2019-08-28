@@ -14,3 +14,7 @@
 #cardsDiv .card{
     margin: 5px;
 }
+
+body {
+    background-color: black;
+}

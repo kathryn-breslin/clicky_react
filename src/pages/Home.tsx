@@ -73,18 +73,19 @@ class Home extends Component {
         />
         <div className="container-fluid">
           <div className="row">
-            <div id="cardsDiv">
-              {seaCreatures.map(creature => (
-                <Card
-                  id={creature.id}
-                  key={creature.id}
-                  image={creature.image}
-                  name={creature.name}
-                  handleClick={this.handleClick}
-                />
-              ))}
+            <div className="col-12">
+              <div id="cardsDiv">
+                {seaCreatures.map(creature => (
+                  <Card
+                    id={creature.id}
+                    key={creature.id}
+                    image={creature.image}
+                    name={creature.name}
+                    handleClick={this.handleClick}
+                  />
+                ))}
+              </div>
             </div>
-
           </div>
         </div>
       </div>
