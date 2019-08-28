@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Jumbotron } from "../components";
 import seaCreatures from "../seaCreatures.json";
+import "./Home.css";
 
 interface ICreatures {
   id: any;
@@ -70,20 +71,20 @@ class Home extends Component {
           counter={this.state.counter}
           totalScore={this.state.totalScore}
         />
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-12">
+            <div className="container">
               {seaCreatures.map(creature => (
                 <Card
                   id={creature.id}
                   key={creature.id}
                   image={creature.image}
                   name={creature.name}
-                  // shuffle={this.shuffle}
                   handleClick={this.handleClick}
                 />
               ))}
             </div>
+
           </div>
         </div>
       </div>
