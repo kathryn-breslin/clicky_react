@@ -37,31 +37,29 @@ class Home extends Component {
       this.setState({ clicked: clicked.concat(id) });
       this.calculateScore(id);
       this.shuffle(id);
-    }
-    else if (clicked.includes(id)) {
-        this.resetGame(id);
-        console.log("Reset Game")
+    } else if (clicked.includes(id)) {
+      this.resetGame(id);
+      console.log("Reset Game");
     }
   };
 
   calculateScore = (id: any) => {
     const { counter, totalScore } = this.state;
     let currentScore = counter + 1;
-    this.setState({ counter: currentScore})
+    this.setState({ counter: currentScore });
     console.log("Counter State: " + counter);
 
     if (currentScore >= totalScore) {
       this.setState({ totalScore: currentScore });
-    }
-    else if (currentScore === 12) {
-        // this.setState({ currentScore: score })
-        console.log("You win!")
+    } else if (currentScore === 12) {
+      // this.setState({ currentScore: score })
+      console.log("You win!");
     }
     this.shuffle(id);
   };
 
   resetGame = (id: any) => {
-    this.setState({ counter: 0, clicked: [], currentScore: 0});
+    this.setState({ counter: 0, clicked: [], currentScore: 0 });
     this.shuffle(id);
   };
 
@@ -69,23 +67,25 @@ class Home extends Component {
     return (
       <div>
         <Jumbotron
-            counter={this.state.counter}
-            totalScore={this.state.totalScore}
+          counter={this.state.counter}
+          totalScore={this.state.totalScore}
         />
-        {seaCreatures.map(creature => (
+        <div className="container">
           <div className="row">
             <div className="col-12">
-              <Card
-                id={creature.id}
-                key={creature.id}
-                image={creature.image}
-                name={creature.name}
-                // shuffle={this.shuffle}
-                handleClick={this.handleClick}
-              />
+              {seaCreatures.map(creature => (
+                <Card
+                  id={creature.id}
+                  key={creature.id}
+                  image={creature.image}
+                  name={creature.name}
+                  // shuffle={this.shuffle}
+                  handleClick={this.handleClick}
+                />
+              ))}
             </div>
           </div>
-        ))}
+        </div>
       </div>
     );
   }
