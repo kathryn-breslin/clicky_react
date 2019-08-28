@@ -5,13 +5,15 @@ interface IProps {
     name: string;
     id: any;
     image: string;
-    shuffle: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+    handleClick: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+
+    // shuffle: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 }
-const Card = ({ name, id, image, shuffle }: IProps) => {
+const Card = ({ name, id, image, handleClick }: IProps) => {
   return (
     <div className="card">
       <img alt={name} src={image}
-      onClick={() => shuffle(id)} className="shuffle"
+      onClick={() => handleClick(id)} className="shuffle"
       ></img>
 
     </div>

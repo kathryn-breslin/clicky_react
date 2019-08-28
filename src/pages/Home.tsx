@@ -11,7 +11,7 @@ interface ICreatures {
 interface IState {
   seaCreatures: ICreatures[];
   counter: number;
-  currentScore: number;
+  totalScore: number;
   clicked: string[];
 }
 
@@ -19,7 +19,7 @@ class Home extends Component {
   state: IState = {
     seaCreatures,
     counter: 0,
-    currentScore: 0,
+    totalScore: 0,
     clicked: []
   };
 
@@ -27,8 +27,6 @@ class Home extends Component {
   shuffle = (id: any) => {
     const { seaCreatures } = this.state;
     seaCreatures.sort(() => Math.random() - 0.5);
-    // this.setState({ counter: counter + 1 });
-    this.handleClick(id);
   };
 
   //Click counter
@@ -37,24 +35,34 @@ class Home extends Component {
 
     if (clicked.indexOf(id)) {
       this.setState({ clicked: clicked.concat(id) });
-      this.calculateScore();
+      this.calculateScore(id);
+      this.shuffle(id);
     }
     else if (clicked.includes(id)) {
-        alert("You lose!")
+        this.resetGame(id);
+        console.log("Reset Game")
     }
   };
 
-  calculateScore = () => {
-    const { counter, currentScore } = this.state;
-    const score = counter + 1;
-
-    if (score >= currentScore) {
-      this.setState({ currentScore: score });
+  calculateScore = (id: any) => {
+    const { counter, totalScore } = this.state;
+    let currentScore = counter + 1;
+    this.setState({ counter: currentScore})
+    console.log("Counter State: " + counter);
+    
+    if (currentScore >= totalScore) {
+      this.setState({ totalScore: currentScore });
     }
-    else if (score === 12) {
-        this.setState({ currentScore: score})
+    else if (currentScore === 12) {
+        // this.setState({ currentScore: score })
         console.log("You win!")
     }
+    this.shuffle(id);
+  };
+
+  resetGame = (id: any) => {
+    this.setState({ counter: 0, clicked: [], currentScore: 0});
+    this.shuffle(id);
   };
 
   render() {
@@ -62,6 +70,8 @@ class Home extends Component {
       <div>
         <div className="container">
           <h1>{this.state.counter}</h1>
+          <h1>{this.state.totalScore}</h1>
+
         </div>
         {seaCreatures.map(creature => (
           <div className="row">
@@ -71,8 +81,8 @@ class Home extends Component {
                 key={creature.id}
                 image={creature.image}
                 name={creature.name}
-                shuffle={this.shuffle}
-                // handleClick={this.handleClick}
+                // shuffle={this.shuffle}
+                handleClick={this.handleClick}
               />
             </div>
           </div>
