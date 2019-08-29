@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Jumbotron } from "../components";
+import { Card, Jumbotron, Wrapper } from "../components";
 import seaCreatures from "../seaCreatures.json";
 import "./Home.css";
 
@@ -71,10 +71,9 @@ class Home extends Component {
           counter={this.state.counter}
           totalScore={this.state.totalScore}
         />
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-12">
-              <div id="cardsDiv">
+        <Wrapper>
+
+              {/* <div id="cardsDiv"> */}
                 {seaCreatures.map(creature => (
                   <Card
                     id={creature.id}
@@ -84,11 +83,10 @@ class Home extends Component {
                     handleClick={this.handleClick}
                   />
                 ))}
+              {/* </div> */}
+              </Wrapper>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
     );
   }
 }

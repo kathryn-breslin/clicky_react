@@ -1,22 +1,12 @@
-/* .jumbotron { 
-    background-image: url("../assets/images/giphy.gif");
-    background-size: cover;
-    height: 100%; 
-    background-repeat: no-repeat;
-    font-family: 'Cabin Sketch', cursive;
-    color: white;
-}
-
-#displayContainer, #jumboElements{
-    float: left;
-} */
-
 .jumbotron {
     background: none;
-    color: white;
     font-family: 'Cabin Sketch', cursive;
+    text-align: center;
 }
 
-#displayContainer, #jumboElements {
-    float: left;
+.jumbotron h1 {
+    font-size: 100px;
 }
+/* #jumboElements {
+    text-align: center;
+} */

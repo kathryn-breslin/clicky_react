@@ -1,20 +1,15 @@
-.container-fluid {
-    /* display: flex; */
-    align-items: center;
-    justify-content: center 
-}
-#cardsDiv{
-    margin-left: 75px;
-    margin-right: 75px;
-
-    padding: 100px;
-    /* border: solid red 1px; */
-}
-
-#cardsDiv .card{
+/* .card {
     margin: 5px;
 }
 
 body {
     background-color: black;
 }
+
+.container-fluid {
+    padding: 20px;
+}
+
+.container-fluid .row {
+    margin: auto;
+} */
