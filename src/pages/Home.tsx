@@ -72,8 +72,6 @@ class Home extends Component {
           totalScore={this.state.totalScore}
         />
         <Wrapper>
-
-              {/* <div id="cardsDiv"> */}
                 {seaCreatures.map(creature => (
                   <Card
                     id={creature.id}
@@ -83,7 +81,6 @@ class Home extends Component {
                     handleClick={this.handleClick}
                   />
                 ))}
-              {/* </div> */}
               </Wrapper>
               </div>
   

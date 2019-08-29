@@ -1,15 +1,6 @@
-/* .card {
-    margin: 5px;
+#home {
+    background-image: url("../components/assets/images/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
-
-body {
-    background-color: black;
-}
-
-.container-fluid {
-    padding: 20px;
-}
-
-.container-fluid .row {
-    margin: auto;
-} */

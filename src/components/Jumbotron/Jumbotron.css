@@ -1,12 +1,15 @@
-.jumbotron {
-    background: none;
+.jumbotron h1{
     font-family: 'Cabin Sketch', cursive;
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url('../assets/images/giphy.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
 .jumbotron h1 {
     font-size: 100px;
 }
-/* #jumboElements {
-    text-align: center;
-} */
